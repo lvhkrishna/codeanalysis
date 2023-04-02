@@ -17,7 +17,7 @@ public class ExceptionController {
 	
 	@GetMapping("/ex")
 	public ResponseEntity<String> excep() throws Exception {
-		throw new CustomException("A Custom Exception");
+		throw new CustomException("My Custom Exception");
 	}
 
 }
