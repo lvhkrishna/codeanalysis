@@ -34,5 +34,6 @@ jobs:
         continue-on-error: true                   # ✏️ Set to false to break your build on scan errors
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
+          configurationFiles: stackhawk-actions.yml
           codeScanningAlerts: true
           githubToken: ${{ github.token }}
