@@ -2,6 +2,7 @@ package com.demo.codeanalysis.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ public class ExceptionController {
 		return new ResponseEntity<>("Static Code Analysis demo!", HttpStatus.OK);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/ex")
 	public ResponseEntity<String> excep() throws Exception {
 		throw new CustomException("My Custom Exception");
