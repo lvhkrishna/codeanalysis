@@ -6,25 +6,27 @@ app:
   env: Development # (required)
   # -- The url of your application to scan --
   host: http://localhost:8088 # (required)
+  excludePaths:
+    - "/ex"
 
 
 # -- Customized Configuration for GraphQL/SOAP/OpenAPI, add here --
-  openApiConf:
-    path: / # OR...
-    inline: |
-      basePath: /
-      schemes:
-      - http
-      paths:
-        /:
-          get:
-            summary: Returns a String with the Project summary
-            description: Just some basic information about the project
-            produces:
-              - application/json
-            responses:
-              200:
-                description: OK
+#  openApiConf:
+#    path: / # OR...
+#    inline: |
+#      basePath: /
+#      schemes:
+#      - http
+#      paths:
+#        /:
+#          get:
+#            summary: Returns a String with the Project summary
+#            description: Just some basic information about the project
+#            produces:
+#              - application/json
+#            responses:
+#              200:
+#                description: OK
       
 #     filePath: openApi.json
   autoPolicy: true
