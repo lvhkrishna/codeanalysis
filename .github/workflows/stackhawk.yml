@@ -27,7 +27,9 @@ jobs:
           distribution: 'zulu'
 
       - name: Start your service
-        run: mvn -B package --file pom.xml
+        run: |
+          mvn -B package --file pom.xml
+          java -jar target/codeanalysis-0.0.1-SNAPSHOT.jar
 
       - name: Run HawkScan
         uses: stackhawk/hawkscan-action@4c3258cd62248dac6d9fe91dd8d45928c697dee0
