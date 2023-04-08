@@ -16,7 +16,6 @@ public class ExceptionController {
 		return new ResponseEntity<>("Static Code Analysis demo!", HttpStatus.OK);
 	}
 	
-	@CrossOrigin
 	@GetMapping("/ex")
 	public ResponseEntity<String> excep() throws Exception {
 		throw new CustomException("My Custom Exception");
