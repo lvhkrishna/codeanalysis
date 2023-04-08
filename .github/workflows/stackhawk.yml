@@ -1,0 +1,32 @@
+name: "StackHawk"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  stackhawk:
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      security-events: write # for stackhawk/hawkscan-action to upload code scanning alert info
+    name: StackHawk
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Start your service
+        run: docker-compose build && docker-compose up -d
+
+      - name: Run HawkScan
+        uses: stackhawk/hawkscan-action@4c3258cd62248dac6d9fe91dd8d45928c697dee0
+        continue-on-error: true                   # ✏️ Set to false to break your build on scan errors
+        with:
+          apiKey: ${{ secrets.HAWK_API_KEY }}
+          codeScanningAlerts: true
+          githubToken: ${{ github.token }}
