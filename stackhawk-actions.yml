@@ -1,0 +1,25 @@
+# -- stackhawk configuration for codeanalysis --
+app:
+  # -- An applicationId obtained from the StackHawk platform. --
+  applicationId: 810a2cb6-2a8b-4489-8280-920298a1cd39 # (required)
+  # -- The environment for the applicationId defined in the StackHawk platform. --
+  env: Development # (required)
+  # -- The url of your application to scan --
+  host: http://localhost:8088 # (required)
+
+
+# -- Customized Configuration for GraphQL/SOAP/OpenAPI, add here --
+  openApiConf:
+    path: /ex # OR...
+#     filePath: openApi.json
+  autoPolicy: true
+  autoInputVectors: true
+  # Configuration Docs: https://docs.stackhawk.com/hawkscan/configuration/
+
+# -- If Authenticated Scanning is needed, add here --
+  # Authenticated Scanning Docs: https://docs.stackhawk.com/hawkscan/authenticated-scanning.html
+  # Authenticated Scanning Repo: https://github.com/kaakaww/scan-configuration/tree/main/Authentication
+
+# -- Help Section --
+  # Docs: https://docs.stackhawk.com/
+  # Contact Support: support@stackhawk.com
