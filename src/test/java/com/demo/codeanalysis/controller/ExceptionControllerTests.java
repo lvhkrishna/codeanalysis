@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ExceptionControllerTests {
+class ExceptionControllerTests {
 	
 	@Autowired
 	private MockMvc mockMvc;
