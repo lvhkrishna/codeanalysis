@@ -2,7 +2,6 @@ package com.demo.codeanalysis.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,7 @@ public class ExceptionController {
 	}
 	
 	@GetMapping("/ex")
-	public ResponseEntity<String> excep() throws Exception {
+	public ResponseEntity<String> excep() throws CustomException {
 		throw new CustomException("My Custom Exception");
 	}
 
