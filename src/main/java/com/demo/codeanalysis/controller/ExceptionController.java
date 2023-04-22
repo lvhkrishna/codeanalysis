@@ -12,7 +12,7 @@ public class ExceptionController {
 	
 	@GetMapping("/")
 	public ResponseEntity<String> welcome() {
-		return new ResponseEntity<>("Static Code Analysis demo!", HttpStatus.OK);
+		return new ResponseEntity<>("Static Code Analysis demo change!", HttpStatus.OK);
 	}
 	
 	@GetMapping("/ex")
