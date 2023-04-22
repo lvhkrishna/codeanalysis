@@ -22,7 +22,7 @@ class ExceptionControllerTests {
 	void welcomeTest() throws Exception {
 		mockMvc.perform(get("/"))
 			.andExpect(status().isOk())
-			.andExpect(content().string(containsString("Static Code Analysis demo!")));
+			.andExpect(content().string(containsString("Static Code Analysis demo change!")));
 	}
 
 }
